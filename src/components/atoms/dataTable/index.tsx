@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { DataTableProps } from "./types";
 
-const PrintTable = ({ columns, data }: DataTableProps): JSX.Element => {
+const DataTable = ({ columns, data }: DataTableProps): JSX.Element => {
   return (
     <table>
       <thead>
@@ -27,9 +27,9 @@ const PrintTable = ({ columns, data }: DataTableProps): JSX.Element => {
   );
 };
 
-PrintTable.propTypes = {
+DataTable.propTypes = {
   columns: PropTypes.array.isRequired,
   data: PropTypes.array.isRequired,
 };
 
-export default PrintTable;
+export default DataTable;
