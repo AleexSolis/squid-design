@@ -1,0 +1,8 @@
+[
+  { "key": "name", "label": "Name" },
+  { "key": "position", "label": "Position" },
+  { "key": "office", "label": "Office" },
+  { "key": "extn", "label": "Extn." },
+  { "key": "salary", "label": "Salary" },
+  { "key": "start_date", "label": "Start date" }
+]
