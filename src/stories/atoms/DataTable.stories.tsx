@@ -8,9 +8,6 @@ import data from "../../mockups/dataTables/data.json";
 export default {
   title: "Atoms/DataTable",
   component: DataTable,
-  argTypes: {
-    backgroundColor: { control: "color" },
-  },
 } as Meta;
 
 const Template: Story<DataTableProps> = (args: DataTableProps) => <DataTable {...args} />;
