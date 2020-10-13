@@ -17,3 +17,10 @@ Records.args = {
   records: 240,
   recordsPerPage: 25,
 };
+
+export const onChangePage = Template.bind({});
+onChangePage.args = {
+  records: 240,
+  recordsPerPage: 25,
+  onChangePage: (currentPage: number) => console.log(`currentPage: ${currentPage}`),
+};

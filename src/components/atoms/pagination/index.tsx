@@ -1,4 +1,4 @@
-import React, { MouseEvent, useState } from "react";
+import React, { MouseEvent, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { PaginationProps } from "./types";
 import "./style.scss";
@@ -6,7 +6,7 @@ import "./style.scss";
 const range = (start: number, stop: number, step: number = 1) =>
   Array.from({ length: (stop - start) / step + 1 }, (_, i) => start + i * step);
 
-const Pagination = ({ records, recordsPerPage }: PaginationProps) => {
+const Pagination = ({ records, recordsPerPage, onChangePage }: PaginationProps) => {
   const [pages] = useState(range(1, Math.ceil(records / recordsPerPage)));
   const [currentPage, setCurrentPage] = useState(1);
   const finalPage = pages.length;
@@ -25,6 +25,10 @@ const Pagination = ({ records, recordsPerPage }: PaginationProps) => {
     event.preventDefault();
     setCurrentPage((prevPage) => (prevPage !== pages[finalPage - 1] ? prevPage + 1 : finalPage));
   };
+
+  useEffect(() => {
+    if (onChangePage) onChangePage(currentPage);
+  }, [currentPage]);
 
   return (
     <div className="pagination">
